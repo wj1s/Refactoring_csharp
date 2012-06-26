@@ -9,11 +9,11 @@ namespace Refactoring
         public double PrintOwning(double previousAmount)
         {
             previousAmount = previousAmount * 1.2;
-            var displayName = Name + "_display";
+            const string displayName = Name + "_display";
             var tmp = 10;
             for (int i = 0; i < tmp; i++)
             {
-                previousAmount += i;
+                Console.WriteLine("name:" + displayName);
             }
             tmp = 5;
             // 1.print banner
@@ -25,10 +25,6 @@ namespace Refactoring
             for (var i = 0; i < 3; i++)
             {
                 previousAmount += tmp;
-                Console.WriteLine("name:" + displayName);
-                Console.WriteLine("i:" + i);
-                Console.WriteLine("plus:" + tmp);
-                Console.WriteLine("amount:" + previousAmount);
             }
 
             //2.print details
