@@ -1,12 +1,12 @@
 ﻿using System;
-
+using Xunit;
 namespace Refactoring
 {
     public class ExtractMethods
     {
         private const string Name = "foo";
 
-        public void PrintOwning(double previousAmount)
+        public double PrintOwning(double previousAmount)
         {
             previousAmount = previousAmount * 1.2;
             var displayName = Name + "_display";
@@ -31,6 +31,17 @@ namespace Refactoring
             Console.WriteLine("Done!");
             Console.WriteLine("name:" + displayName);
             Console.WriteLine("amount" + previousAmount);
+            return previousAmount;
+        }
+    }
+
+    public class ExtractMethodsTest
+    {
+        [Fact]
+        public void should_parse_to_all_when_status_text_is_null()
+        {
+            var extractMethods = new ExtractMethods();
+            Assert.Equal(extractMethods.PrintOwning(1.0), 35.2);
         }
     }
 }

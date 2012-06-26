@@ -19,3 +19,5 @@
 _ReSharper.*
 Debug/*
 Release/*
+Refactoring/bin/*
+Refactoring/obj/*
