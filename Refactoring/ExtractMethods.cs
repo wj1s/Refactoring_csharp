@@ -11,6 +11,11 @@ namespace Refactoring
             previousAmount = previousAmount * 1.2;
             var displayName = Name + "_display";
             var tmp = 10;
+            for (int i = 0; i < tmp; i++)
+            {
+                previousAmount += i;
+            }
+            tmp = 5;
             // 1.print banner
             Console.WriteLine("*************************************");
             Console.WriteLine("*********Customer Owns***************");
@@ -19,7 +24,6 @@ namespace Refactoring
             // 3.calculate outstanding
             for (var i = 0; i < 3; i++)
             {
-                tmp += i;
                 previousAmount += tmp;
                 Console.WriteLine("name:" + displayName);
                 Console.WriteLine("i:" + i);
@@ -38,10 +42,10 @@ namespace Refactoring
     public class ExtractMethodsTest
     {
         [Fact]
-        public void should_parse_to_all_when_status_text_is_null()
+        public void should_print_right()
         {
             var extractMethods = new ExtractMethods();
-            Assert.Equal(extractMethods.PrintOwning(1.0), 35.2);
+            Assert.Equal(extractMethods.PrintOwning(1.0), 61.2);
         }
     }
 }
