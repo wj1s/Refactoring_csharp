@@ -13,7 +13,7 @@ namespace Refactoring
             Console.WriteLine("*************************************");
 
             previousAmount = previousAmount * 1.2;
-            const string displayName = Name + "_display";
+            string displayName = Name + "_display";
 
             var tmp = 5;
             for (var i = 0; i < 3; i++)
